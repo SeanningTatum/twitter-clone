@@ -1,6 +1,6 @@
 import React from 'react'
 
-const tweets = (props) => {
+const tweet = () => {
   return (
     <div className="text-left">
       <p><b>Sean Urgel</b> @mrseanurgel 10/10/1998</p>
@@ -9,4 +9,4 @@ const tweets = (props) => {
   )
 }
 
-export default tweets
+export default tweet

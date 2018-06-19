@@ -1,5 +1,5 @@
 import React from 'react'
-import Tweets from './Tweets/Tweet';
+import Tweets from './Tweets/Tweets';
 
 const tweetFeed = () => {
   return (
