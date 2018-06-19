@@ -9,7 +9,7 @@ const navigationItem = (props) => {
   )
 }
 
-NavigationItem.propTypes = {
+navigationItem.propTypes = {
   name: [PropTypes.string, PropTypes.element.isRequired]
 }
 
