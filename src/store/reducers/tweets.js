@@ -4,7 +4,7 @@ const initState = {
    tweets: [
       {
          name: "Sean Urgel",
-         handlerName: "@mrseanurgel",
+         handlerName: "mrseanurgel",
          message: "Making a project to impress employers hehe please accept me",
          date: '10/10/1998'
       }
@@ -18,13 +18,13 @@ const fetchTweets = (state) => {
       tweets: [
          {
             name: "Kyra Lei",
-            handlerName: "@leideroda",
+            handlerName: "leideroda",
             message: "Hi, I like art",
             date: '6/30/1998'
          },
          {
             name: "Sean Urgel",
-            handlerName: "@mrseanurgel",
+            handlerName: "mrseanurgel",
             message: "Making a project to impress employers hehe please accept me",
             date: '10/10/1998'
          }
@@ -40,7 +40,7 @@ const reducer = (state = initState, action) => {
          tweets: [
             {
                name: "Someone else",
-               handlerName: "@leideroda",
+               handlerName: "leideroda",
                message: "Hi, I like art",
                date: '6/30/1998'
             },
