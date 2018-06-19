@@ -6,7 +6,7 @@ import TweetInput from '../TweetInput/TweetInput';
 const tweetFeed = (props) => {
 
   const tweetInput = props.hasTweetInput
-    ? <TweetInput />
+    ? <TweetInput clicked={props.postTweet}/>
     : null
 
   return (
@@ -26,7 +26,8 @@ tweetFeed.propTypes = {
     message: Proptypes.string.isRequired,
     date: Proptypes.any.isRequired
   })).isRequired,
-  hasTweetInput: Proptypes.bool.isRequired
+  hasTweetInput: Proptypes.bool.isRequired,
+  postTweet: Proptypes.func.isRequired
 }
 
 

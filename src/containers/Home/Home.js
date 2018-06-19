@@ -18,7 +18,8 @@ export class Home extends Component {
           <div className="col-md-6">
             <TweetFeed 
               hasTweetInput={this.props.addTweetInput}
-              tweets={this.props.tweets}/>
+              tweets={this.props.tweets}
+              postTweet={this.props.onPostTweet}/>
           </div>
         </div>   
       </div>

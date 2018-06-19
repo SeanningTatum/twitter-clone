@@ -6,9 +6,9 @@ export const fetchTweets = () => {
    }
 }
 
-export const postTweet = (tweet) => {
+// Add tweet to parameters
+export const postTweet = () => {
    return {
-      type: actionTypes.POST_TWEET,
-      tweet: tweet
+      type: actionTypes.POST_TWEET
    }
 }

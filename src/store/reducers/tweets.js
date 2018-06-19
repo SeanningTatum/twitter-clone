@@ -1,3 +1,5 @@
+import * as actionTypes from 'store/actions/actionTypes';
+
 const initState = {
    tweets: [
       {
@@ -32,7 +34,18 @@ const fetchTweets = (state) => {
 
 const reducer = (state = initState, action) => {
    switch (action.type) {
-      case "FETCH_TWEETS": return fetchTweets(state);
+      case actionTypes.FETCH_TWEETS: return fetchTweets(state);
+      case actionTypes.POST_TWEET: return {
+         ...state, 
+         tweets: [
+            {
+               name: "Someone else",
+               handlerName: "@leideroda",
+               message: "Hi, I like art",
+               date: '6/30/1998'
+            },
+         ]
+      }
       default: return state;
    }
 }
