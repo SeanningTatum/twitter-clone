@@ -4,7 +4,8 @@ import TweetFeed from 'components/Shared/TweetFeed/TweetFeed';
  
 export class Home extends Component {
   state = {
-    tweets: [1,2]
+    tweets: [1,2],
+    addTweetInput: true
   }
 
   render() {
@@ -15,7 +16,9 @@ export class Home extends Component {
             <ProfileCard />
           </div>
           <div className="col-md-6">
-            <TweetFeed tweets={this.state.tweets}/>
+            <TweetFeed 
+              hasTweetInput={this.state.addTweetInput}
+              tweets={this.state.tweets}/>
           </div>
         </div>   
       </div>
