@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import ProfileCard from 'components/Home/ProfileCard/ProfileCard';
 import TweetFeed from 'components/Shared/TweetFeed/TweetFeed';
  
+import { connect } from 'react-redux';
+import * as tweetActions from 'store/actions/tweets';
+
 export class Home extends Component {
-  state = {
-    tweets: [1,2],
-    addTweetInput: true
-  }
 
   render() {
     return (
@@ -17,8 +16,8 @@ export class Home extends Component {
           </div>
           <div className="col-md-6">
             <TweetFeed 
-              hasTweetInput={this.state.addTweetInput}
-              tweets={this.state.tweets}/>
+              hasTweetInput={this.props.addTweetInput}
+              tweets={this.props.tweets}/>
           </div>
         </div>   
       </div>
@@ -26,4 +25,13 @@ export class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  tweets: state.tweets,
+  addTweetInput: state.addTweetInput
+})
+
+const mapDispatchToProps = dispatch => ({
+  onFetchTweets: () => dispatch(tweetActions.fetchTweets())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
