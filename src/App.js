@@ -11,7 +11,10 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path='/home' exact component={Home}/>
+          <Route path='/home' component={Home}/>
+          <Route path='/notifications' render={() => {
+            return <h1>Notifications</h1>
+          }}/>
           <Route path='/messages' render={() => {
             return <h1>Messages</h1>
           }}/>
