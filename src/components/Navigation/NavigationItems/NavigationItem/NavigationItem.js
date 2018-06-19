@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 const navigationItem = (props) => {
   return (
     <li className="nav-item">
-      <a className="nav-link">{props.name}</a>
+      <NavLink 
+        to={props.name.toLowerCase()} 
+        className="nav-link"
+        activeClassName='active'>{props.name}</NavLink>
     </li>
   )
 }
