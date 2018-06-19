@@ -3,7 +3,7 @@ import './App.css';
 
 import Navbar from 'components/Navigation/Navbar/Navbar';
 import Home from 'containers/Home/Home';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -11,10 +11,11 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Home}/>
+          <Route path='/home' exact component={Home}/>
           <Route path='/messages' render={() => {
             return <h1>Messages</h1>
           }}/>
+          <Redirect to="/home"/>
         </Switch>
       </div>
     );
