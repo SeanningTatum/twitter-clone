@@ -1,9 +1,12 @@
 import React from 'react';
+import NavigationItems from './NavigationItems/NavigationItems';
 
 const navbar = () => {
   return (
     <nav className="navbar navbar-light bg-light">
-      <span className="navbar-brand mb-0 h1">Navbar</span>
+      <div className="container">
+        <NavigationItems />
+      </div>
     </nav>
   )
 }
