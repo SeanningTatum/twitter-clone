@@ -4,8 +4,8 @@ import Tweet from './Tweet/Tweet';
 const tweets = ({tweets}) => {
 
   return (
-    tweets.map( () => (
-      <div className="list-group-item m-0">
+    tweets.map( (tweet) => (
+      <div className="list-group-item m-0" key={tweet}>
         <div className="row">
           <div className="col-1">
             img

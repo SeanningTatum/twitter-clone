@@ -14,7 +14,7 @@ const navigationItem = (props) => {
 }
 
 navigationItem.propTypes = {
-  name: [PropTypes.string, PropTypes.element.isRequired]
+  name: PropTypes.string.isRequired
 }
 
 export default navigationItem;

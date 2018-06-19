@@ -20,8 +20,8 @@ const tweetFeed = (props) => {
 }
 
 tweetFeed.propTypes = {
-  tweets: Proptypes.element.isRequired,
-  hasTweetInput: [Proptypes.element.isRequired, Proptypes.bool]
+  tweets: Proptypes.array.isRequired,
+  hasTweetInput: Proptypes.bool.isRequired
 }
 
 

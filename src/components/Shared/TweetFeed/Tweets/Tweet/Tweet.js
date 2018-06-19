@@ -11,10 +11,10 @@ const tweet = (props) => {
 }
 
 tweet.propTypes = {
-   name: [PropTypes.string, PropTypes.element.isRequired],
-   twitterHandler: [PropTypes.string, PropTypes.element.isRequired],
-   date: [PropTypes.string, PropTypes.element.isRequired],
-   tweet: [PropTypes.string, PropTypes.element.isRequired]
+   name: PropTypes.string.isRequired,
+   twitterHandler: PropTypes.string.isRequired, 
+   date: PropTypes.string.isRequired, 
+   tweet: PropTypes.string.isRequired
 }
 
 export default tweet

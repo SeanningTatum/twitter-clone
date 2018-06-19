@@ -7,8 +7,8 @@ const tweetInput = () => {
         img
       </div>
       <div className="col-md-10">
-        <div class="form-group">
-          <textarea class="form-control" placeholder="What's Happening?" rows="3"></textarea>
+        <div className="form-group">
+          <textarea className="form-control" placeholder="What's Happening?" rows="3"></textarea>
         </div>
       </div>
     </div>
