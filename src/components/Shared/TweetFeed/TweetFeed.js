@@ -6,11 +6,7 @@ const tweetFeed = () => {
 
   return (
     <div classNameName="list-group">
-      <a className="list-group-item list-group-item-action flex-column align-items-start">
-        <div className="row">
-          <Tweets tweets={tweets}/> 
-        </div> {/* ROW */}
-      </a>
+      <Tweets tweets={tweets}/> 
     </div>
   )
 }

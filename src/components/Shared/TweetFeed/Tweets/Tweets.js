@@ -11,7 +11,11 @@ const tweets = ({tweets}) => {
             img
           </div>
           <div className="col-11">
-            <Tweet/>
+            <Tweet 
+              name={"Sean Urgel"}
+              twitterHandler={"mrseanurgel"}
+              date={"10/10/1998"}
+              tweet={"Making a project to impress employers hehe please accept me"}/>
           </div>
         </div>
       </div>
