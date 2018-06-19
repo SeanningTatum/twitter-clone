@@ -1,11 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const navigationItem = () => {
+const navigationItem = (props) => {
   return (
     <li className="nav-item">
-      <a className="nav-link">Messages</a>
+      <a className="nav-link">{props.name}</a>
     </li>
   )
 }
 
+NavigationItem.propTypes = {
+  name: [PropTypes.string, PropTypes.element.isRequired]
+}
+
 export default navigationItem;
+
+
