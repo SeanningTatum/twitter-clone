@@ -1,5 +1,12 @@
 const initState = {
-   tweets: [1, 2, 3],
+   tweets: [
+      {
+         name: "Sean Urgel",
+         handlerName: "@mrseanurgel",
+         message: "Making a project to impress employers hehe please accept me",
+         date: '10/10/1998'
+      }
+   ],
    addTweetInput: true
 }
 

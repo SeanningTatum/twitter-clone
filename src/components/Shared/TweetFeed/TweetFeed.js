@@ -20,7 +20,12 @@ const tweetFeed = (props) => {
 }
 
 tweetFeed.propTypes = {
-  tweets: Proptypes.array.isRequired,
+  tweets: Proptypes.arrayOf(Proptypes.shape({
+    name: Proptypes.string.isRequired,
+    handlerName: Proptypes.string.isRequired,
+    message: Proptypes.string.isRequired,
+    date: Proptypes.any.isRequired
+  })).isRequired,
   hasTweetInput: Proptypes.bool.isRequired
 }
 

@@ -1,26 +1,35 @@
 import React from 'react';
 import Tweet from './Tweet/Tweet';
+import PropTypes from 'prop-types';
 
-const tweets = ({tweets}) => {
-
+const tweets = (props) => {
   return (
-    tweets.map( (tweet) => (
-      <div className="list-group-item m-0" key={tweet}>
+    props.tweets.map( (tweet, ndx) => (
+      <div className="list-group-item m-0" key={ndx}>
         <div className="row">
           <div className="col-1">
             img
           </div>
           <div className="col-11">
             <Tweet 
-              name={"Sean Urgel"}
-              twitterHandler={"mrseanurgel"}
-              date={"10/10/1998"}
-              tweet={"Making a project to impress employers hehe please accept me"}/>
+              name={tweet.name}
+              twitterHandler={tweet.handlerName}
+              date={tweet.date}
+              message={tweet.message}/>
           </div>
         </div>
       </div>
     ))
   )
+}
+
+tweets.propTypes = {
+  tweets: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    handlerName: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+    date: PropTypes.any.isRequired
+  })).isRequired
 }
 
 export default tweets

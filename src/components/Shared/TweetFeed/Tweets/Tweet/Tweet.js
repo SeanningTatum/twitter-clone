@@ -5,7 +5,7 @@ const tweet = (props) => {
   return (
     <div className="text-left">
       <p><b>{props.name}</b> @{props.twitterHandler} {props.date}</p>
-      <p>{props.tweet}</p>
+      <p>{props.message}</p>
     </div>
   )
 }
@@ -13,8 +13,8 @@ const tweet = (props) => {
 tweet.propTypes = {
   name: PropTypes.string.isRequired,
   twitterHandler: PropTypes.string.isRequired, 
-  date: PropTypes.string.isRequired, 
-  tweet: PropTypes.string.isRequired
+  date: PropTypes.any.isRequired, 
+  message: PropTypes.string.isRequired
 }
 
 export default tweet
