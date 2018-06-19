@@ -1,3 +1,4 @@
 export {
-   fetchTweets 
+   fetchTweets,
+   postTweet 
 } from './tweets';
