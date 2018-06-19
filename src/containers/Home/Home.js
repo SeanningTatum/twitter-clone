@@ -17,8 +17,7 @@ export class Home extends Component {
           <div className="col-md-6">
             <TweetFeed tweets={this.state.tweets}/>
           </div>
-        </div>
-        
+        </div>   
       </div>
     )
   }
