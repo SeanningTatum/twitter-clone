@@ -5,7 +5,7 @@ const initState = {
 
 const reducer = (state = initState, action) => {
    switch (action.type) {
-      case "FETCH_TWEETS": return {...state, tweets: [state.tweets]}
+      case "FETCH_TWEETS": return {...state, tweets: [1,2]}
       default: return state;
    }
 }
