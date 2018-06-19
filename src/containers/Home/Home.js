@@ -3,6 +3,10 @@ import ProfileCard from 'components/Home/ProfileCard/ProfileCard';
 import TweetFeed from 'components/Shared/TweetFeed/TweetFeed';
  
 export class Home extends Component {
+  state = {
+    tweets: [1,2]
+  }
+
   render() {
     return (
       <div className="container mt-3">
@@ -11,7 +15,7 @@ export class Home extends Component {
             <ProfileCard />
           </div>
           <div className="col-md-6">
-            <TweetFeed />
+            <TweetFeed tweets={this.state.tweets}/>
           </div>
         </div>
         

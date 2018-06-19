@@ -1,12 +1,11 @@
 import React from 'react'
 import Tweets from './Tweets/Tweets';
 
-const tweetFeed = () => {
-  const tweets = [1,2];
+const tweetFeed = (props) => {
 
   return (
     <div classNameName="list-group">
-      <Tweets tweets={tweets}/> 
+      <Tweets tweets={props.tweets}/> 
     </div>
   )
 }
