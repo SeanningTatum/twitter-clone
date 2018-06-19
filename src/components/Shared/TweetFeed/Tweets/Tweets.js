@@ -1,11 +1,21 @@
-import React from 'react'
+import React from 'react';
+import Tweet from './Tweet/Tweet';
 
-const tweets = (props) => {
+const tweets = ({tweets}) => {
+
   return (
-    <div className="text-left">
-      <p><b>Sean Urgel</b> @mrseanurgel 10/10/1998</p>
-      <p>Making a project to impress employers hehe please accept me</p>
-    </div>
+    tweets.map( () => (
+      <div className="list-group-item m-0">
+        <div className="row">
+          <div className="col-1">
+            img
+          </div>
+          <div className="col-11">
+            <Tweet/>
+          </div>
+        </div>
+      </div>
+    ))
   )
 }
 
