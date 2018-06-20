@@ -12,15 +12,9 @@ const initState = {
    addTweetInput: true
 }
 
-const fetchTweets = (state, message) => {
+const fetchTweets = (state) => {
 	return {
-		...state, 
-		tweets: state.tweets.concat({
-			name: "Someone else",
-			handlerName: "leideroda",
-			message: message,
-			date: '6/30/1998'
-		})
+		...state
 	} 	
 }
 
@@ -38,8 +32,8 @@ const postTweet = (state, tweet) => {
 
 const reducer = (state = initState, action) => {
    switch (action.type) {
-      case actionTypes.FETCH_TWEETS: return fetchTweets(state, action.message);
-      case actionTypes.POST_TWEET: return postTweet(state, action.message);
+      case actionTypes.FETCH_TWEETS: return fetchTweets(state);
+      case actionTypes.POST_TWEET: return postTweet(state, action.tweet);
       default: return state;
    }
 }
