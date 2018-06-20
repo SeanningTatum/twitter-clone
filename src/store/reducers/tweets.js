@@ -12,34 +12,16 @@ const initState = {
    addTweetInput: true
 }
 
-const fetchTweets = (state) => {
-	fetch('http://localhost:3000', {method: "GET"})
-		.then(function(response) {
-			return response.json();
+const fetchTweets = (state, message) => {
+	return {
+		...state, 
+		tweets: state.tweets.concat({
+			name: "Someone else",
+			handlerName: "leideroda",
+			message: message,
+			date: '6/30/1998'
 		})
-		.then((message) => {
-			return {
-				...state, 
-				tweets: [
-					{
-						name: "Kyra Lei",
-						handlerName: "leideroda",
-						message: message,
-						date: '6/30/1998'
-					},
-					{
-						name: "Sean Urgel",
-						handlerName: "mrseanurgel",
-						message: "Making a project to impress employers hehe please accept me",
-						date: '10/10/1998'
-					}
-				]
-			}
-		}).catch((err) => {
-			console.error("error");
-		});
-
-		
+	} 	
 }
 
 const postTweet = (state, tweet) => {
@@ -56,8 +38,8 @@ const postTweet = (state, tweet) => {
 
 const reducer = (state = initState, action) => {
    switch (action.type) {
-      case actionTypes.FETCH_TWEETS: return fetchTweets(state);
-      case actionTypes.POST_TWEET: return postTweet(state, action.tweet);
+      case actionTypes.FETCH_TWEETS: return fetchTweets(state, action.message);
+      case actionTypes.POST_TWEET: return postTweet(state, action.message);
       default: return state;
    }
 }
