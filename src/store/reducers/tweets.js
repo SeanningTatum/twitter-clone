@@ -41,7 +41,7 @@ const reducer = (state = initState, action) => {
             {
                name: "Someone else",
                handlerName: "leideroda",
-               message: "Hi, I like art",
+               message: action.tweet,
                date: '6/30/1998'
             },
          ]

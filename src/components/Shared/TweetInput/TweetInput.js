@@ -38,7 +38,7 @@ export default class TweetInput extends Component {
                 rows={this.state.rowSize}></textarea>
             </div>
             <div className="text-right mr-2">
-              <button className="btn btn-success" onClick={this.props.clicked}>Tweet</button>
+              <button className="btn btn-success" onClick={() => this.props.clicked(this.state.tweet)}>Tweet</button>
             </div>
           </div>
         </div>
