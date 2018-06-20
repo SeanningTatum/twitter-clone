@@ -37,7 +37,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onFetchTweets: () => dispatch(tweetActions.fetchTweets()),
-  onPostTweet: (tweet) => dispatch(tweetActions.postTweet(tweet))
+  onPostTweet: (tweet) => dispatch(tweetActions.onPostTweet(tweet))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

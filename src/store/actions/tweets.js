@@ -1,7 +1,6 @@
 import * as actionTypes from './actionTypes';
 
-
-export const getTweets = (tweets) => {
+const getTweets = (tweets) => {
    return {
       type: actionTypes.FETCH_TWEETS,
       tweets
@@ -9,10 +8,23 @@ export const getTweets = (tweets) => {
 }
 
 // Add tweet to parameters
-export const postTweet = (tweet) => {  
+const postTweet = (tweet) => {  
    return {
       type: actionTypes.POST_TWEET,
       tweet
+   }
+}
+
+export const onPostTweet = (tweet) => {
+   return dispatch => {
+      fetch("http://localhost:3000", {
+         method: "POST",
+         headers: {"Content-Type": "application/json"},
+         body: JSON.stringify({message: tweet})
+      }).then((response) => {
+         console.log(response);
+         dispatch(postTweet(tweet));
+      })
    }
 }
 
