@@ -15,12 +15,12 @@ const fetchTweets = (state, tweets) => {
 const postTweet = (state, tweet) => {
    return {
          ...state, 
-         // tweets: state.tweets.concat({
-         //    name: "Someone else",
-         //    handlerName: "leideroda",
-         //    message: tweet,
-         //    date: '6/30/1998'
-         // })
+         tweets: state.tweets.concat({
+            name: "Someone else",
+            handlerName: "leideroda",
+            message: tweet,
+            date: '6/30/1998'
+         })
    }   
 }
 
