@@ -7,6 +7,10 @@ import * as tweetActions from 'store/actions/index';
 
 export class Home extends Component {
 
+  componentDidMount() {
+    this.props.onFetchTweets();
+  }
+
   render() {
     return (
       <div className="container mt-3">
