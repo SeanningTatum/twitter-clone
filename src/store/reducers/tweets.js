@@ -32,24 +32,27 @@ const fetchTweets = (state) => {
    }
 }
 
-const reducer = (state = initState, action) => {
-   switch (action.type) {
-      case actionTypes.FETCH_TWEETS: return fetchTweets(state);
-      case actionTypes.POST_TWEET: return {
+const postTweet = (state, tweet) => {
+   return {
          ...state, 
          tweets: [
             {
                name: "Someone else",
                handlerName: "leideroda",
-               message: action.tweet,
+               message: tweet,
                date: '6/30/1998'
             },
          ]
-      }
+   }   
+}
+
+const reducer = (state = initState, action) => {
+   switch (action.type) {
+      case actionTypes.FETCH_TWEETS: return fetchTweets(state);
+      case actionTypes.POST_TWEET: return postTweet(state, action.tweet);
       default: return state;
    }
 }
 
 export default reducer;
-
 
