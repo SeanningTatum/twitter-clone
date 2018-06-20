@@ -4,12 +4,17 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { createStore } from 'redux';
+// Redux stuff
+import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
 import tweetReducer from 'store/reducers/tweets';
 
-const store = createStore(tweetReducer);
+const store = createStore(
+   tweetReducer, 
+   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 
 const app = (
    <Provider store={store}>
