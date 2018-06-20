@@ -14,7 +14,6 @@ export class Home extends Component {
   render() {
     return (
       <div className="container mt-3">
-        <h5 onClick={this.props.onFetchTweets}>Refresh</h5>
         <div className="row">
           <div className="col-md-4">
             <ProfileCard />
