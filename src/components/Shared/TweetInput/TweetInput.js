@@ -12,11 +12,19 @@ export default class TweetInput extends Component {
   }
 
   changeTextAreaSize = (size) => {
-    this.setState({rowSize: size});
+    if (this.state.tweet.length == 0) {
+      this.setState({rowSize: size});
+    }
   }
 
   handleChange = (event) => {
     this.setState({tweet: event.target.value});
+  }
+
+  submitTweet = async () => {
+    this.props.clicked(this.state.tweet);
+    await this.setState({tweet: ''});
+    this.changeTextAreaSize(1);
   }
 
   render() {
@@ -38,7 +46,7 @@ export default class TweetInput extends Component {
                 rows={this.state.rowSize}></textarea>
             </div>
             <div className="text-right mr-2">
-              <button className="btn btn-success" onClick={() => this.props.clicked(this.state.tweet)}>Tweet</button>
+              <button className="btn btn-success" onClick={this.submitTweet}>Tweet</button>
             </div>
           </div>
         </div>
