@@ -22,6 +22,8 @@ export default class TweetInput extends Component {
   }
 
   submitTweet = async () => {
+    if (this.state.tweet.length === 0) return;
+    
     this.props.clicked(this.state.tweet);
     await this.setState({tweet: ''});
     this.changeTextAreaSize(1);
