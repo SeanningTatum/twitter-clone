@@ -5,7 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 // Redux stuff
-import { createStore, compose } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
 import tweetReducer from 'store/reducers/tweets';
