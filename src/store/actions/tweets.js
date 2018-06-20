@@ -1,9 +1,10 @@
 import * as actionTypes from './actionTypes';
 
 
-export const getTweets = () => {
+export const getTweets = (tweets) => {
    return {
-      type: actionTypes.FETCH_TWEETS
+      type: actionTypes.FETCH_TWEETS,
+      tweets
    }
 }
 
@@ -20,8 +21,8 @@ export const fetchTweets = () => {
       fetch("http://localhost:3000/")
          .then(response => response.json())
          .then(data => {
-            console.log(data.response);
-            dispatch(getTweets())
+            const tweets = data.response;
+            dispatch(getTweets(tweets));
          }).catch(err => {
             console.error(err);
          });
