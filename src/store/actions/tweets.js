@@ -7,24 +7,10 @@ const getTweets = (tweets) => {
    }
 }
 
-// Add tweet to parameters
 const postTweet = (tweet) => {  
    return {
       type: actionTypes.POST_TWEET,
       tweet
-   }
-}
-
-export const onPostTweet = (tweet) => {
-   return dispatch => {
-      fetch("http://localhost:3000", {
-         method: "POST",
-         headers: {"Content-Type": "application/json"},
-         body: JSON.stringify({message: tweet})
-      }).then((response) => {
-         console.log(response);
-         dispatch(postTweet(tweet));
-      })
    }
 }
 
@@ -40,3 +26,18 @@ export const fetchTweets = () => {
          });
    } 
 }
+
+export const onPostTweet = (tweet) => {
+   return dispatch => {
+      fetch("http://localhost:3000", {
+         method: "POST",
+         headers: {"Content-Type": "application/json"},
+         body: JSON.stringify({message: tweet})
+      }).then((response) => {
+         console.log(response);
+         dispatch(postTweet(tweet));
+         fetchTweets();
+      })
+   }
+}
+
