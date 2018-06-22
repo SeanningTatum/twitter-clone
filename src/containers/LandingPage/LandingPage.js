@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 
 export class LandingPage extends Component {
-  
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+
+  navigate = () => {
+    this.props.history.push('/sign-up');
+  }
+
   render() {
     return (
       <div>
         <button className="btn btn-primary">Log in</button>
-        <button className="btn btn-primary">Sign up</button>
+        <button onClick={this.navigate} className="btn btn-primary">Sign up</button>
       </div>
     )
   }
