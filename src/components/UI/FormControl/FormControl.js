@@ -2,21 +2,24 @@ import React from 'react';
 
 const formControl = (props) => {
    let inputElement = null;
+   const changeEvent = (event) => props.change(props.placeholder.toLowerCase(), event);
 
    switch (props.type) {
       case ('input'):
          inputElement = <input 
+            type={props.type}
             className="form-control" 
             placeholder={props.placeholder}
             value={props.value}
-            onChange={props.change}/>;
+            onChange={changeEvent}/>;
          break;
 
       default: inputElement = <input 
+         type={props.type}
          className="form-control" 
          placeholder={props.placeholder}
          value={props.value}
-         onChange={props.change}/>;
+         onChange={changeEvent}/>;
    }
 
    return (
