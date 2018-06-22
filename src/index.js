@@ -5,15 +5,20 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 // Redux stuff
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
 import tweetReducer from 'store/reducers/tweets';
-
+import authReducer from 'store/reducers/auth';
 import thunk from 'redux-thunk';
 
+const rootReducer = combineReducers({
+   auth: authReducer, 
+   tweet: tweetReducer
+});
+
 const store = createStore(
-   tweetReducer,
+   rootReducer,
    applyMiddleware(thunk) 
    //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

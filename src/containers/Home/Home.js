@@ -31,8 +31,8 @@ export class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  tweets: state.tweets,
-  addTweetInput: state.addTweetInput
+  tweets: state.tweet.tweets,
+  addTweetInput: state.tweet.addTweetInput
 })
 
 const mapDispatchToProps = dispatch => ({

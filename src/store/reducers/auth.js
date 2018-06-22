@@ -1,6 +1,6 @@
 import * as actionTypes from 'store/actions/actionTypes';
 
-initState = {
+const initState = {
    token: null,
    userID: null
 }
