@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as authActions from 'store/actions/index';
 import FormControl from 'components/UI/FormControl/FormControl';
 
 export class Signup extends Component {
@@ -11,16 +13,12 @@ export class Signup extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/user/signup", {
-         method: "POST",
-         headers: {"Content-Type": "application/json"},
-         body: JSON.stringify({
-            email: this.state.email,
-            name: this.state.name,
-            handle: this.state.username,
-            password: this.state.password,
-         })
-      })
+    this.props.onSignUp({
+        email: this.state.email,
+        name: this.state.name,
+        handle: this.state.username,
+        password: this.state.password
+      });
   }
 
   onChangeInput = async (inputName, event) => {
@@ -63,4 +61,12 @@ export class Signup extends Component {
   }
 }
 
-export default Signup;
+const mapStateToProps = state => ({
+  
+});
+
+const mapDispatchToProps = dispatch => ({
+  onSignUp: (user) => dispatch(authActions.onSignUp(user))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

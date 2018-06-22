@@ -6,6 +6,7 @@ const initState = {
 }
 
 const login = (state) => {
+   console.log("hi");
    return {
       ...state,
       userID: 1
