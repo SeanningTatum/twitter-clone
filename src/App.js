@@ -20,7 +20,7 @@ class App extends Component {
           <Route path='/messages' render={() => {
             return <h1>Messages</h1>
           }}/>
-          <Route path='signup' component={Signup} />
+          <Route path='/signup' component={Signup} />
           <Route path='/' component={LandingPage} exact/>
           <Redirect to="/home"/>
         </Switch>

@@ -7,7 +7,7 @@ export class LandingPage extends Component {
   }
 
   navigate = () => {
-    this.props.history.push('/sign-up');
+    this.props.history.push('/signup');
   }
 
   render() {
