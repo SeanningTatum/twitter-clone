@@ -1,15 +1,22 @@
 import React from 'react';
 
-const input = (props) => {
+const formControl = (props) => {
    let inputElement = null;
 
    switch (props.type) {
       case ('input'):
          inputElement = <input 
             className="form-control col-sm-10" 
+            placeholder={props.placeholder}
             value={props.value}
             onChange={props.change}/>;
          break;
+
+      default: inputElement = <input 
+         className="form-control col-sm-10" 
+         placeholder={props.placeholder}
+         value={props.value}
+         onChange={props.change}/>;
    }
 
    return (
@@ -19,3 +26,5 @@ const input = (props) => {
       </div>
    );
 }
+
+export default formControl;
