@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from 'components/UI/Input/Input';
+import Input from 'components/UI/FormControl/FormControl';
 
 export class Signup extends Component {
   state = {
@@ -8,13 +8,14 @@ export class Signup extends Component {
     email: '',
     password: ''
   }
+
   render() {
     return (
-      <form>
-        
-      <Input type="input" placeholder={"Email"} label={"username"}/>
-
-      </form>
+      <div className="container">
+        <form>
+          <Input type="input" placeholder={"Email"} label={"username"}/>
+        </form>
+      </div>
     )
   }
 }

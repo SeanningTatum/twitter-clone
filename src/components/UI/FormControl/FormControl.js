@@ -6,14 +6,14 @@ const formControl = (props) => {
    switch (props.type) {
       case ('input'):
          inputElement = <input 
-            className="form-control col-sm-10" 
+            className="form-control" 
             placeholder={props.placeholder}
             value={props.value}
             onChange={props.change}/>;
          break;
 
       default: inputElement = <input 
-         className="form-control col-sm-10" 
+         className="form-control" 
          placeholder={props.placeholder}
          value={props.value}
          onChange={props.change}/>;
@@ -22,7 +22,9 @@ const formControl = (props) => {
    return (
       <div className="form-group row">
          <label className="col-sm-2">{props.label}</label>
-         {inputElement}
+         <div className="col-sm-10">
+            {inputElement}
+         </div>
       </div>
    );
 }
