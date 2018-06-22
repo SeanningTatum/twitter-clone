@@ -1,0 +1,22 @@
+import * as actionTypes from 'store/actions/actionTypes';
+
+initState = {
+   token: null,
+   userID: null
+}
+
+const login = (state) => {
+   return {
+      ...state,
+      userID: 1
+   }
+}
+
+const reducer = (state = initState, action) => {
+   switch (action.type) {
+      case actionTypes.LOGIN: return login(state);
+      default: return state;
+   }
+}
+
+export default reducer;

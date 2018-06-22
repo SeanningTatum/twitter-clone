@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes';
 import { Signup } from '../../containers/Signup/Signup';
 
-const signUp = () => {
+const login = () => {
    return {
       type: actionTypes.LOGIN
    }
@@ -19,7 +19,7 @@ export const onSignUp = (user) => {
             password: this.state.password,
          }).then(response => {
             if (response.json().status === 200) {
-               dispatch(signUp());
+               dispatch(login());
             }
          })
       });
